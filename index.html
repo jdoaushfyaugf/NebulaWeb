@@ -14,65 +14,49 @@
         }
 
         body {
-            background: linear-gradient(to bottom, #2c3e50, #34495e);
+            background: linear-gradient(to bottom, #2980b9, #8e44ad, #f39c12); /* Blue, Purple, and Orange gradient */
             color: #fff;
             font-size: 16px;
             overflow: hidden;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Align content to the top */
             height: 100vh;
-            background-image: conic-gradient(blue, orange, purple);
             background-size: cover;
             background-position: center;
         }
 
         .status-container {
             text-align: center;
-            padding: 40px;
-            border-radius: 10px;
-            background-color: rgba(52, 152, 219, 0.7); /* Blue background with transparency */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            width: 300px;
+            padding: 20px;
+            width: 350px;
         }
 
         .status-container h1 {
             font-size: 2rem;
             font-weight: bold;
-            color: #f39c12;
+            color: #fff;
         }
 
         .status-container p {
             font-size: 1.2rem;
             margin-top: 20px;
-            color: #f39c12;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 70%; /* Position the status text to the right */
+            transform: translateY(-50%);
+            font-weight: bold;
         }
 
         /* Custom Cursor */
         html {
-            cursor: crosshair;
-        }
-
-        /* Simple Animation for Text */
-        @keyframes glow {
-            0% {
-                color: #f39c12;
-            }
-            50% {
-                color: #f1c40f;
-            }
-            100% {
-                color: #f39c12;
-            }
-        }
-
-        .status-container p {
-            animation: glow 2s infinite;
+            cursor: url('https://www.google.com/favicon.ico'), auto;
         }
 
         /* Button Style */
         .discord-btn {
-            margin-top: 20px;
+            margin-top: 100px; /* Move the button further down */
             padding: 12px 24px;
             background-color: #7289da;
             color: white;
@@ -98,9 +82,6 @@
     <div class="status-container">
         <h1>Blox Fruits [3RD SEA]</h1>
         <p>Status: Coming Soon</p>
-
-
-        
         <a href="https://discord.gg/aPWtSVVpF7" class="discord-btn" target="_blank">Join Discord</a>
     </div>
 
