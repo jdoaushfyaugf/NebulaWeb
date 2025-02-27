@@ -14,7 +14,7 @@
         }
 
         body {
-            background: #1c1c1c;
+            background: linear-gradient(to bottom, #2c3e50, #34495e);
             color: #fff;
             font-size: 16px;
             overflow: hidden;
@@ -22,13 +22,16 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background-image: url('https://via.placeholder.com/1500'); /* Replace with your background image URL */
+            background-size: cover;
+            background-position: center;
         }
 
         .status-container {
             text-align: center;
-            padding: 30px;
+            padding: 40px;
             border-radius: 10px;
-            background-color: #333;
+            background-color: rgba(52, 152, 219, 0.7); /* Blue background with transparency */
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             width: 300px;
         }
@@ -47,7 +50,7 @@
 
         /* Custom Cursor */
         html {
-            cursor: url('https://www.google.com/favicon.ico'), auto;
+            cursor: crosshair;
         }
 
         /* Simple Animation for Text */
@@ -66,6 +69,28 @@
         .status-container p {
             animation: glow 2s infinite;
         }
+
+        /* Button Style */
+        .discord-btn {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #7289da;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .discord-btn:hover {
+            background-color: #5b6eae;
+        }
+
+        .discord-btn:active {
+            background-color: #4e5a89;
+        }
     </style>
 </head>
 <body>
@@ -73,6 +98,7 @@
     <div class="status-container">
         <h1>Blox Fruits [3RD SEA]</h1>
         <p>Status: Coming Soon</p>
+        <a href="https://discord.gg/aPWtSVVpF7" class="discord-btn" target="_blank">Join Discord</a>
     </div>
 
 </body>
