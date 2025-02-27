@@ -19,17 +19,18 @@
             font-size: 16px;
             overflow: hidden;
             display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Align content to the top */
+            justify-content: flex-start; /* Align content to the left */
+            align-items: flex-start;
             height: 100vh;
             background-size: cover;
             background-position: center;
+            padding: 20px;
         }
 
         .status-container {
-            text-align: center;
+            text-align: left;
             padding: 20px;
-            width: 350px;
+            width: 300px;
         }
 
         .status-container h1 {
@@ -42,38 +43,27 @@
             font-size: 1.2rem;
             margin-top: 20px;
             color: #fff;
-            position: absolute;
-            top: 50%;
-            left: 70%; /* Position the status text to the right */
-            transform: translateY(-50%);
             font-weight: bold;
         }
 
         /* Custom Cursor */
         html {
-            cursor: crosshair;
+            cursor: url('https://www.google.com/favicon.ico'), auto;
         }
 
-        /* Button Style */
+        /* Button Style (Text Link) */
         .discord-btn {
-            margin-top: 100px; /* Move the button further down */
-            padding: 12px 24px;
-            background-color: #7289da;
-            color: white;
-            border: none;
-            border-radius: 5px;
+            position: absolute;
+            bottom: 20px; /* Move to the very bottom */
+            left: 20px;
             font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+            color: #7289da;
             text-decoration: none;
+            font-weight: bold;
         }
 
         .discord-btn:hover {
-            background-color: #5b6eae;
-        }
-
-        .discord-btn:active {
-            background-color: #4e5a89;
+            color: #5b6eae;
         }
     </style>
 </head>
@@ -82,8 +72,9 @@
     <div class="status-container">
         <h1>Blox Fruits [3RD SEA]</h1>
         <p>Status: Coming Soon</p>
-        <a href="https://discord.gg/aPWtSVVpF7" class="discord-btn" target="_blank">Join Discord</a>
     </div>
+
+    <a href="https://discord.gg/aPWtSVVpF7" class="discord-btn" target="_blank">Join Discord</a>
 
 </body>
 </html>
