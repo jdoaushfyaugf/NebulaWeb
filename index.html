@@ -14,58 +14,49 @@
         }
 
         body {
-            background: url('https://img.freepik.com/free-vector/gradient-blue-background-modern-design_343694-1690.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
+            background: #000;
+            color: #00FF00;
             font-size: 16px;
+            font-family: 'Courier New', Courier, monospace;
             overflow: hidden;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
             height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
             cursor: crosshair;
+            position: relative;
         }
 
-        /* Loading Animation */
-        .loading-overlay {
-            position: fixed;
+        /* Background code effect */
+        .background-code {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 1;
-            transition: opacity 1s ease-in-out;
+            font-size: 16px;
+            line-height: 1.5;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #00FF00;
+            opacity: 0.5;
+            animation: scrollCode 15s linear infinite;
         }
 
-        .loading-overlay.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .loading-text {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #fff;
-            font-family: 'Pacifico', cursive;
-            animation: blink 1s infinite alternate;
-        }
-
-        @keyframes blink {
-            0% { opacity: 1; }
-            100% { opacity: 0.5; }
+        @keyframes scrollCode {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
         }
 
         /* Page Content */
         .status-container {
             text-align: left;
-            padding: 20px;
-            width: 300px;
+            z-index: 10;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1s ease-in-out, transform 1s ease-in-out;
@@ -79,7 +70,7 @@
         .status-container h1 {
             font-size: 2.5rem;
             font-weight: bold;
-            color: #fff;
+            color: #00FF00;
             font-family: 'Lobster', cursive;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
@@ -87,7 +78,7 @@
         .status-container p {
             font-size: 1.5rem;
             margin-top: 20px;
-            color: #fff;
+            color: #00FF00;
             font-weight: bold;
             font-family: 'Dancing Script', cursive;
         }
@@ -97,7 +88,7 @@
             bottom: 20px;
             left: 20px;
             font-size: 1.2rem;
-            color: #425ba6;
+            color: #ffcc00;
             text-decoration: none;
             font-weight: bold;
             font-family: 'Poppins', sans-serif;
@@ -111,6 +102,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lobster&family=Pacifico&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Scrolling Code Background -->
+    <div class="background-code">
+        <pre>
+            const code = `function statusPage() {
+                let status = 'Coming Soon';
+                console.log('Status:', status);
+                alert('Page Loading...');
+            }
+
+            statusPage();`;
+        </pre>
+    </div>
+
     <div class="loading-overlay" id="loading">
         <div class="loading-text">Loading...</div>
     </div>
