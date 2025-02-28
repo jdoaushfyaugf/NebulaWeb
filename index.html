@@ -14,49 +14,58 @@
         }
 
         body {
-            background: #000;
-            color: #00FF00;
+            background: url('https://img.freepik.com/free-vector/modern-technology-background-with-blue-lines_1017-38042.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
             font-size: 16px;
-            font-family: 'Courier New', Courier, monospace;
             overflow: hidden;
-            height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100vh;
             padding: 20px;
             cursor: crosshair;
-            position: relative;
         }
 
-        /* Background code effect */
-        .background-code {
-            position: absolute;
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            font-size: 16px;
-            line-height: 1.5;
-            white-space: nowrap;
-            overflow: hidden;
-            color: #00FF00;
-            opacity: 0.5;
-            animation: scrollCode 15s linear infinite;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
         }
 
-        @keyframes scrollCode {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(-100%);
-            }
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-text {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+            font-family: 'Pacifico', cursive;
+            animation: blink 1s infinite alternate;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            100% { opacity: 0.5; }
         }
 
         /* Page Content */
         .status-container {
             text-align: left;
-            z-index: 10;
+            padding: 20px;
+            width: 300px;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1s ease-in-out, transform 1s ease-in-out;
@@ -70,7 +79,7 @@
         .status-container h1 {
             font-size: 2.5rem;
             font-weight: bold;
-            color: #00FF00;
+            color: #fff;
             font-family: 'Lobster', cursive;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
@@ -78,7 +87,7 @@
         .status-container p {
             font-size: 1.5rem;
             margin-top: 20px;
-            color: #00FF00;
+            color: #fff;
             font-weight: bold;
             font-family: 'Dancing Script', cursive;
         }
@@ -102,19 +111,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lobster&family=Pacifico&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Scrolling Code Background -->
-    <div class="background-code">
-        <pre>
-            const code = `function statusPage() {
-                let status = 'Coming Soon';
-                console.log('Status:', status);
-                alert('Page Loading...');
-            }
-
-            statusPage();`;
-        </pre>
-    </div>
-
     <div class="loading-overlay" id="loading">
         <div class="loading-text">Loading...</div>
     </div>
